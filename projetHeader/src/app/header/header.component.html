@@ -1,0 +1,27 @@
+<mat-toolbar color="primary" fxLayout="column wrap" fxLayoutAlign="space-around" role="header">
+
+<button mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>reorder</mat-icon>
+</button>
+<span>Titre</span>
+</mat-toolbar>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="test" [style.color]="appService.selectedMenu == 'home' ? 'red' : 'black'" 
+  (click)="selectMenu('home')"><mat-icon>home</mat-icon>Home</button> <!--si le home est sélectionné texte rouge sinon black-->
+  <button mat-menu-item [style.color]="appService.selectedMenu == 'skills' ? 'red' : 'black'" 
+  (click)="selectMenu('skills')"><mat-icon>hotel</mat-icon>Skills</button>
+  <button mat-menu-item [style.color]="appService.selectedMenu == 'experiences' ? 'red' : 'black'" 
+  (click)="selectMenu('experiences')"><mat-icon>child_friendly</mat-icon>Experiences</button>
+  <button mat-menu-item [style.color]="appService.selectedMenu == 'contact' ? 'red' : 'black'" 
+  (click)="selectMenu('contact')"><mat-icon>redeem</mat-icon>Contact</button>
+  <button mat-menu-item [style.color]="appService.selectedMenu == 'todos' ? 'red' : 'black'" 
+  (click)="selectMenu('todos')"><mat-icon>android</mat-icon>Todos</button>
+</mat-menu>
+
+<mat-menu #test="matMenu">
+    <button mat-menu-item [style.color]="appService.selectedMenu == 'todos' ? 'red' : 'black'" 
+    (click)="selectMenu('todos')"><mat-icon>android</mat-icon>Todos</button>
+</mat-menu>
+
+
+
+

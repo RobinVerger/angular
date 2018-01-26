@@ -1,0 +1,11 @@
+<ul *ngFor="let item of serviceList.todoList">
+<li>{{item}}<button (click)="supprimer(item)">Supprimer</button>
+<button *ngIf="hidden == false"  (click)="montrerInput()">Editer</button>
+<ng-container *ngIf="hidden == true">
+<input #newItem>
+<button (click)="editer(item, newItem.value); cacherInput()">Editer</button>
+</ng-container>
+</li>
+</ul>
+
+
